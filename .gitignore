@@ -23,3 +23,6 @@ npm-debug.log
 src/public/app/**/*.js
 **/*.map
 src/public/lib
+
+#.ds store from mac
+.DS_Store
