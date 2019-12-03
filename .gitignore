@@ -10,3 +10,16 @@ buildNumber.properties
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
+
+# NPM
+node_modules
+npm-debug.log
+
+# Code Editor Settings
+.idea
+.vs
+
+# Build Generated Files
+src/public/app/**/*.js
+**/*.map
+src/public/lib
