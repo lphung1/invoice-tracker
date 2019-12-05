@@ -12,7 +12,7 @@ const routes: Routes = [{
 {
   path: 'list-invoices', component: InvoicelistComponent
 },
-{path: '', redirectTo: '/list-invoices', pathMatch: 'full'},];
+{path: '', redirectTo: '/list-invoices', pathMatch: 'full'}, ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
