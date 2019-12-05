@@ -1,4 +1,4 @@
-import { Invoice } from './../Models/Invoice';
+import { Invoice } from '../Models/Invoice';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

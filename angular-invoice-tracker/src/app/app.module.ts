@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InvoicelistComponent } from './invoicelist/invoicelist.component';
+import { InvoicelistComponent } from './invoice-list/invoicelist.component';
 import { InvoicedetailComponent } from './invoicedetail/invoicedetail.component';
 import { CustomerCardComponent } from './customer/customer-card/customer-card.component';
 import { CustomerCardListComponent } from './customer/customer-card-list/customer-card-list.component';
