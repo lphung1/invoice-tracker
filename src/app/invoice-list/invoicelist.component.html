@@ -24,7 +24,7 @@
 </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let invoice of invocies" (click)="OnSelect(invoice)" >
+        <tr *ngFor="let invoice of invocies" (click)="OnSelect(invoice)" [routerLink]= "['/list-invoicesDetails']" >
             <td>
                 {{invoice.invoiceId}}
             </td>
@@ -48,6 +48,5 @@
     </tbody>
 </table>
 </div>
-<div *ngIf="loadcomponent">
-<app-invoicedetail [invoice]="selectedInvoice"></app-invoicedetail>
-</div>
+
+
