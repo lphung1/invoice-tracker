@@ -1,19 +1,22 @@
 
             <div class="card m-3" >
                 <div class="card-header">
-                    
-                        Dan Pickles the Great
+                        {{thisCustomer.firstName}} {{thisCustomer.lastName}}
                 </div>
                 <div class="card-body">
                     <div class="clearfix">
                         
                             <a href="#" class="white">
                                     <img src="../assets/default.png" width="72em" height="72em" class="card-image" />
-                                    Other info here?
+                                    Phone: 
+                                    {{thisCustomer.customerPhoneNumber}}
                             </a>
                         
-                            <div class="card-body-content"> Card Body, some address here that is long</div>
-                            <a [routerLink]>View Orders</a>
+                            <div class="card-body-content">
+                               <br> {{thisCustomer.customerAddress}} <br>
+                                {{thisCustomer.customerEmail}}
+                            </div>
+                            <a [routerLink] = "['/list-invoices']" >View Orders</a>
                         
                     </div>
                 </div>
