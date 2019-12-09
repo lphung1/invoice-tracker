@@ -1,3 +1,4 @@
+import { InvoiceDetailService } from './../invoice-detail.service';
 import { Invoice } from './../Models/Invoice';
 import { Component, OnInit, Input } from '@angular/core';
 import { InvoiceLine } from '../Models/InvoiceLine';
@@ -10,7 +11,9 @@ import { InvoiceLine } from '../Models/InvoiceLine';
 export class InvoicedetailComponent implements OnInit {
 
  @Input() invoice: Invoice;
-  constructor() { }
+ 
+  constructor(private service: InvoiceDetailService) { }
+
   invoicelines: InvoiceLine[] = [
     { invoiceId: 1, invoiceLineId: 1, description: 'plumbing' , price: 2500,quantity : 1},
     { invoiceId: 1, invoiceLineId: 2, description: 'electrical', price: 500,quantity : 1},
@@ -18,6 +21,10 @@ export class InvoicedetailComponent implements OnInit {
     
 
   ]
+
+
+  inv = this.service.getInvoice();
+
 
 
   ngOnInit() {

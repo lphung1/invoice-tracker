@@ -1,3 +1,4 @@
+import { InvoiceDetailService } from './../invoice-detail.service';
 import { InvoicedetailComponent } from './../invoicedetail/invoicedetail.component';
 import { Invoice } from '../Models/Invoice';
 import { Component, OnInit, ɵConsole } from '@angular/core';
@@ -32,14 +33,17 @@ export class InvoicelistComponent implements OnInit {
   
   selectedInvoice: Invoice;
   loadcomponent = false;
+
   OnSelect(invoice: Invoice): void {
     this.loadcomponent = true;
     this.selectedInvoice = invoice;
    console.log(invoice);
-   
+   this.service.saveInvoice(invoice);
+
     //this.router.navigate(['/list-invoicesDetails']);
   }
-  constructor() { }
+
+  constructor(private service: InvoiceDetailService) { }
 
   ngOnInit() {
   }

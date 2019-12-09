@@ -10,7 +10,7 @@ import { SafeMethodCall } from '@angular/compiler';
 export class CustomerCardListComponent implements OnInit {
 
   constructor() { }
-  
+
   customerList: Customer[] = [
     {customerId: 1, firstName: 'Sam', lastName: 'hills', customerAddress: '1234 someStreet rd', customerEmail: 'someEmail@domain.com', customerCity: 'randomCity', customerState: 'Florida', customerPhoneNumber: 1235432131}, 
     {customerId: 1, firstName: 'Tom', lastName: 'smith', customerAddress: '1234 someStreet rd', customerEmail: 'someEmail@domain.com', customerCity: 'randomCity', customerState: 'Florida', customerPhoneNumber: 1235432131},
