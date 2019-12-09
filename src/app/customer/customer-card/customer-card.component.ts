@@ -12,6 +12,8 @@ export class CustomerCardComponent implements OnInit {
 
   @Input() thisCustomer: Customer ;
 
+  
+
   ngOnInit() {
   }
 
