@@ -1,6 +1,8 @@
 import { InvoicedetailComponent } from './../invoicedetail/invoicedetail.component';
 import { Invoice } from '../Models/Invoice';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-invoicelist',
@@ -8,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./invoicelist.component.css']
 })
 export class InvoicelistComponent implements OnInit {
+  [x: string]: any;
 
   invocies: Invoice[] = [
     // tslint:disable-next-line: max-line-length
@@ -32,6 +35,8 @@ export class InvoicelistComponent implements OnInit {
   OnSelect(invoice: Invoice): void {
     this.loadcomponent = true;
     this.selectedInvoice = invoice;
+   console.log(invoice);
+   
     //this.router.navigate(['/list-invoicesDetails']);
   }
   constructor() { }

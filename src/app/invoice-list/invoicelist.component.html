@@ -21,32 +21,35 @@
 <th>
     Due date
 </th>
+<th></th>
 </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let invoice of invocies" (click)="OnSelect(invoice)" [routerLink]= "['/list-invoicesDetails']" >
+        <tr *ngFor="let thisinvoice of invocies" >
             <td>
-                {{invoice.invoiceId}}
+                {{thisinvoice.invoiceId}}
             </td>
             <td>
-                {{invoice.customer}}
+                {{thisinvoice.customer}}
             </td>
             <td>
-                {{invoice.genDate | date:"MMM dd yyyy"}}
+                {{thisinvoice.genDate | date:"MMM dd yyyy"}}
             </td>
             <td>
-                {{invoice.amount}}
+                {{thisinvoice.amount}}
             </td>
             <td>
-                {{invoice.status}}
+                {{thisinvoice.status}}
             </td>
             <td>
-                {{invoice.dueDate | date:"MMM dd yyyy"}}
+                {{thisinvoice.dueDate | date:"MMM dd yyyy"}}
             </td>
+            <td>
+                <button (click)="OnSelect(thisinvoice)"  [routerLink] = "['/list-invoicesDetails']" >details</button>
         </tr>
 
     </tbody>
 </table>
-</div>
+
 
 
