@@ -8,6 +8,7 @@ import { InvoicelistComponent } from './invoice-list/invoicelist.component';
 import { InvoicedetailComponent } from './invoicedetail/invoicedetail.component';
 import { CustomerCardComponent } from './customer/customer-card/customer-card.component';
 import { CustomerCardListComponent } from './customer/customer-card-list/customer-card-list.component';
+import { NewInvoiceComponent } from './new-invoice/new-invoice.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CustomerCardListComponent } from './customer/customer-card-list/custome
     InvoicelistComponent,
     InvoicedetailComponent,
     CustomerCardComponent,
-    CustomerCardListComponent
+    CustomerCardListComponent,
+    NewInvoiceComponent
   ],
   imports: [
     BrowserModule,

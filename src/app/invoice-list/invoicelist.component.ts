@@ -1,3 +1,4 @@
+import { InvoicedetailComponent } from './../invoicedetail/invoicedetail.component';
 import { Invoice } from '../Models/Invoice';
 import { Component, OnInit } from '@angular/core';
 
@@ -25,6 +26,14 @@ export class InvoicelistComponent implements OnInit {
     { invoiceId: 7, customer: 'Dr Pickles', genDate: new Date('2019-12-01'), amount: 2500, dueDate: new Date('2019-12-16'), status: 'unPaid' }, 
   ];
 
+  
+  selectedInvoice: Invoice;
+  loadcomponent = false;
+  OnSelect(invoice: Invoice): void {
+    this.loadcomponent = true;
+    this.selectedInvoice = invoice;
+    //this.router.navigate(['/list-invoicesDetails']);
+  }
   constructor() { }
 
   ngOnInit() {
