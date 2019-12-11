@@ -1,63 +1,53 @@
-<br/>
+<br />
 
-<form name="newInvoiceForm">
-    <div class="form-group" id ="formNewInvoice">
-      <label for="formGroupExampleInput">Customer</label>
-<select class="form-control" style="width: 80%;" >
-    <option name="customeName">Default select</option>
-  </select>
+<!-- <form name="newInvoiceForm" > -->
+    <div class="form-group" id="formNewInvoice">
+        <label for="formGroupExampleInput">Customer</label>
+        <select class="form-control" style="width: 80%;" >
+            <option class = "text-muted">None Selected</option>
+            <option name="customeName" *ngFor="let customers of customerList">{{customers.firstName}} {{customers.lastName}}</option>
+        </select>
 
 
-<table class="formTable">
-    <thead>
-        <tr>
-        <th>Service</th>
-            <th>Cost</th>
+        <table class="formTable">
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th name = "costHeader">Cost</th>
 
-        </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let field of fieldArray; let i = index" >
-            <td>
-                    <input type ="text" [(ngModel)]="invoice.invoiceLines[i].description" name={{invoice.invoiceLines[i].description}}>
-                </td>
-                <td>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr *ngFor="let invoiceLineRow of invoiceLineArray; let i = index">
+                    <td>
+                        <input type="text" [(ngModel)]= "invoiceLineArray[i].description" name="description"  >
+                    </td>
+                    <td>
                         <div class="input-group-prepend">
-                                <span class="input-group-text">$</span>
-                             
-                    <input class="form-control" type = "number" [(ngModel)]=invoice.invoiceLines[i].price name= "{{invoice.invoiceLines[i].price}}"  > 
-                     </div>
-                </td>
+                            <span class="input-group-text">$</span>
+
+                            <input class="form-control" type="number" [(ngModel)]= "invoiceLineArray[i].price" name="name">
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-dark" type="button" (click)="deleteFieldValue(i)">-</button>
+                    </td>
+
+                </tr>
+
                 <td>
-                    <button class="btn btn-dark" type="button" (click)="deleteFieldValue(i)">delete row</button>
+                        <button class="btn btn-dark" type="button" (click)="addFieldValue()">+</button>
                 </td>
-            </tr>
-            <tr>
-        <td>
-            <input type ="text" [(ngModel)]="newAttribute.description" name={{newAttribute.description}}>
-        </td>
-        <td>
-                <div class="input-group-prepend">
-                        <span class="input-group-text">$</span>
-                     
-            <input class="form-control" type = "number" [(ngModel)]=newAttribute.price name= "{{newAttribute.price}}"  > 
-             </div>
-        </td>
-        <td>
-            <button class="btn btn-dark" type="button" (click)="addFieldValue()">Add row</button>
-        </td>
-    </tr>
-    
-    
-    <tr>
-        <td>
-        Due date</td>
-        <td><input type="date" name="dueDate"> </td>
-    </tr>
-</tbody>
-</table>
-<br/>
-<input class="btn btn-dark" type="submit" value="Submit"> &nbsp;
-<input class="btn btn-dark" type="reset" value="Reset">
-</div>
-</form>
+                <tr>
+                    <td>Due date</td>
+                    <td><input type="date" name="dueDate"> </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <br />
+        <input class="btn btn-dark" type="submit" value="Submit">;
+        <input class="btn btn-dark" type="reset" value="Reset">
+    </div>
+<!-- </form> -->

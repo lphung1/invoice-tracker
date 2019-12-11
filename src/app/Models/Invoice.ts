@@ -7,8 +7,7 @@ export class Invoice {
     dueDate: Date;
     status: string;
     invoiceLines: InvoiceLine[];
-    constructor()
-{
+    constructor(){
     this.invoiceLines = [];
 }
 
