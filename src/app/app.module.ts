@@ -12,7 +12,7 @@ import { NewInvoiceComponent } from './new-invoice/new-invoice.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChartsModule } from 'ng2-charts';
 import { InvoiceHistoryLineChartComponent } from './dashboard/invoice-history-line-chart/invoice-history-line-chart.component';
-import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { PieChartComponent } from './dashboard/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
