@@ -11,11 +11,11 @@ export class InvoiceDetailService {
   private thisInvoiceDetail: InvoiceLine;
 
 
-  saveInvoice(i: Invoice){
+  saveInvoice(i: Invoice) {
     this.thisInvoice = i;
   }
 
-  getInvoice(){
+  getInvoice() {
     return this.thisInvoice;
   }
 

@@ -22,7 +22,7 @@ const routes: Routes = [{
 },
 { path: 'new-invoice', component: NewInvoiceComponent },
 {path: 'dashboard-home', component: DashboardComponent},
-{path: '', redirectTo: '/list-invoices', pathMatch: 'full'},
+{path: '', redirectTo: '/dashboard-home', pathMatch: 'full'},
  ];
 
 @NgModule({
