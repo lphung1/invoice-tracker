@@ -9,6 +9,7 @@ import { InvoicedetailComponent } from './invoicedetail/invoicedetail.component'
 import { CustomerCardComponent } from './customer/customer-card/customer-card.component';
 import { CustomerCardListComponent } from './customer/customer-card-list/customer-card-list.component';
 import { NewInvoiceComponent } from './new-invoice/new-invoice.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NewInvoiceComponent } from './new-invoice/new-invoice.component';
     InvoicedetailComponent,
     CustomerCardComponent,
     CustomerCardListComponent,
-    NewInvoiceComponent
+    NewInvoiceComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

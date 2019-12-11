@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { pathMatch } from 'tough-cookie';
 import { InvoicedetailComponent } from './invoicedetail/invoicedetail.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [{
@@ -20,6 +21,7 @@ const routes: Routes = [{
   path: 'list-invoicesDetails', component: InvoicedetailComponent
 },
 { path: 'new-invoice', component: NewInvoiceComponent },
+{path: 'dashboard-home', component: DashboardComponent},
 {path: '', redirectTo: '/list-invoices', pathMatch: 'full'},
  ];
 
