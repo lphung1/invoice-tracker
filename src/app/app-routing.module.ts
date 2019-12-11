@@ -1,3 +1,4 @@
+import { PaymentPortalComponent } from './payment-portal/payment-portal.component';
 
 import { CustomerCardListComponent } from './customer/customer-card-list/customer-card-list.component';
 import { NewInvoiceComponent } from './new-invoice/new-invoice.component';
@@ -22,6 +23,7 @@ const routes: Routes = [{
 },
 { path: 'new-invoice', component: NewInvoiceComponent },
 {path: 'dashboard-home', component: DashboardComponent},
+{path: 'payment-portal', component: PaymentPortalComponent},
 {path: '', redirectTo: '/dashboard-home', pathMatch: 'full'},
  ];
 

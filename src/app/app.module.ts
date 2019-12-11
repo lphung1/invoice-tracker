@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChartsModule } from 'ng2-charts';
 import { InvoiceHistoryLineChartComponent } from './dashboard/invoice-history-line-chart/invoice-history-line-chart.component';
 import { PieChartComponent } from './dashboard/pie-chart/pie-chart.component';
+import { PaymentPortalComponent } from './payment-portal/payment-portal.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PieChartComponent } from './dashboard/pie-chart/pie-chart.component';
     DashboardComponent,
     InvoiceHistoryLineChartComponent,
     PieChartComponent,
+    PaymentPortalComponent,
 
   ],
   imports: [
