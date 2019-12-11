@@ -1,3 +1,4 @@
+import { InvoiceLine } from './InvoiceLine';
 export class Invoice {
     invoiceId: number;
     customer: string;
@@ -5,8 +6,10 @@ export class Invoice {
     amount: number;
     dueDate: Date;
     status: string;
-
+    invoiceLines: InvoiceLine[];
     constructor()
-{}
+{
+    this.invoiceLines = [];
+}
 
 }

@@ -1,7 +1,7 @@
-import { InvoiceDetailService } from './../invoice-detail.service';
-import { Invoice } from './../Models/Invoice';
+import { InvoiceDetailService } from './../../invoice-detail.service';
+import { Invoice } from './../../Models/Invoice';
 import { Component, OnInit, Input } from '@angular/core';
-import { InvoiceLine } from '../Models/InvoiceLine';
+import { InvoiceLine } from './../../Models/InvoiceLine';
 
 @Component({
   selector: 'app-invoicedetail',

@@ -1,0 +1,13 @@
+#formNewInvoice
+{
+    width:80%; 
+    align-content: center; 
+    padding-left: 5em;
+}
+
+
+
+.formTable td
+{
+    padding-left: 0.75em;
+}
