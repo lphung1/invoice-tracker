@@ -10,6 +10,9 @@ import { CustomerCardComponent } from './customer/customer-card/customer-card.co
 import { CustomerCardListComponent } from './customer/customer-card-list/customer-card-list.component';
 import { NewInvoiceComponent } from './new-invoice/new-invoice.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ChartsModule } from 'ng2-charts';
+import { InvoiceHistoryLineChartComponent } from './dashboard/invoice-history-line-chart/invoice-history-line-chart.component';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CustomerCardComponent,
     CustomerCardListComponent,
     NewInvoiceComponent,
-    DashboardComponent
+    DashboardComponent,
+    InvoiceHistoryLineChartComponent,
+    PieChartComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

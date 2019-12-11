@@ -62,38 +62,41 @@
 
     <a id="flexbox"></a>
             <hr>
-            <h2 class="mt-5">Masonry-style grid columns</h2>
-            <h6>with Bootstrap 4 flexbox</h6>
+            <h2 class="mt-5"> </h2>
+            <h6> </h6>
 
             <div class="card-columns mb-3">
-                <div class="card">
-                    <img class="card-img-top img-fluid" src="//placehold.it/600x200/444/fff?text=..." alt="Card image cap">
+                <div class="card shadow-lg">
+                   
+                    
                     <div class="card-body">
                         <h4 class="card-title">New XL Grid Tier</h4>
+                        <app-invoice-history-line-chart></app-invoice-history-line-chart>
                         <p class="card-text">With screens getting smaller, Bootstrap 4 introduces a new grid breakpoint with the col-xl-* classes. This extra tier extends the media query range all the way down to 576 px. Eventhough the new XL tier would make one think it’s been added to support extra large screens, it’s actually the opposite.</p>
                     </div>
                 </div>
-                <div class="card card-body">
-                    <blockquote class="card-blockquote">
-                        <p>Bootstrap 4 will be lighter and easier to customize.</p>
-                        <footer>
-                            <small class="text-muted">
-                              Someone famous like <cite title="Source Title">Mark Otto</cite>
-                            </small>
-                        </footer>
-                    </blockquote>
-                </div>
-                <div class="card">
-                    <img class="card-img-top img-fluid" src="//placehold.it/600x200/bbb/fff?text=..." alt="Card image cap">
+
+                <div class="card shadow-lg">       
                     <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
+                        <h4 class="card-title">Some Chart Title</h4>
+                        <app-pie-chart></app-pie-chart>
                         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
                 </div>
-                <div class="card card-body card-inverse card-primary text-center">
+                <div class="card card-body shadow-lg">
+                        <blockquote class="card-blockquote">
+                            <p>Latest invoices?</p>
+                            <footer>
+                                <small class="text-muted">
+                                  Someone famous like <cite title="Source Title">Mark Otto</cite>
+                                </small>
+                            </footer>
+                        </blockquote>
+                    </div>
+                <div class="card card-body card-inverse card-primary text-center shadow-lg">
                     <blockquote class="card-blockquote">
-                        <p>Create masonry or Pinterest-style card layouts in Bootstrap 4.</p>
+                        <p>Most Recent Invoices can go here.</p>
                         <footer>
                             <small>
                               Someone famous in <cite title="Source Title">Bootstrap</cite>
