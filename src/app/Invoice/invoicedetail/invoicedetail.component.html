@@ -1,81 +1,88 @@
 <app-nav-bar></app-nav-bar>
-<BR/>
+<BR />
 <div class="container">
-        <div id="pdfContent" >
+
+    <div id="pdfContent">
+
         <div class="row">
-<div class="col-sm-8"> <h3>Invoice No.  {{ inv.invoiceId }} </h3>
-    <b>Due date: </b> {{inv.dueDate | date:"MMM dd yyyy" }}
-</div>
-<div class="col-sm-4">
-    Dan Pickles
-    <br/> Laky Mary Bulevard
-    <br/>
-    Lake Mary
-    <br/>
-    Florida - 32135 
-</div>
-</div>
-</div>
-<br/>
-<br/>
-<br/>
+            <div class="col-sm-8">
+                <h3>Invoice No. {{ inv.invoiceId }} </h3>
+                <b>Due date: </b> {{inv.dueDate | date:"MMM dd yyyy" }}
+            </div>
+            <div class="col-sm-4">
+                Dan Pickles
+                <br /> Laky Mary Bulevard
+                <br />
+                Lake Mary
+                <br />
+                Florida - 32135
+            </div>
+        </div>
 
-<div style="padding-left: 10em;">
-    
-<table class="table table-striped" style="width: 80%;">
-    <thead class="thead-dark">
-        <tr>
-<th>
-    Item No.
-</th>
-<th>
-    Item Description
-</th>
-<th> Price
-</th>
-<th>
-    Quantity
-</th>
-<th>
-        Total
-</th>
-</tr>
-    </thead>
-    <tbody>
-           <tr *ngFor="let InvoiceLine of invoicelines"  >
+        <br />
+        <br />
+        <br />
 
-            <td>
-                {{ InvoiceLine.invoiceLineId}}
-            </td>
-            <td>
-                {{ InvoiceLine.description}}
-            </td>
-            <td>
-                {{ InvoiceLine.price | currency:'USD'}}
-            </td>
-            <td> {{ InvoiceLine.quantity}}
+        <div style="padding-left: 10em;">
 
-            </td>
-            <td>
-                    {{ InvoiceLine.price *  InvoiceLine.quantity | currency:'USD' }}
-            </td>
-        </tr>
-        
+            <table class="table table-striped" style="width: 80%;">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            Item No.
+                        </th>
+                        <th>
+                            Item Description
+                        </th>
+                        <th> Price
+                        </th>
+                        <th>
+                            Quantity
+                        </th>
+                        <th>
+                            Total
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let InvoiceLine of invoicelines">
 
-    </tbody>
-    <tfoot>
-        <tr>
-          <td colspan="4" >Grand Total</td>
-          <td > $180</td>
-        </tr>
-      </tfoot>
-</table>
+                        <td>
+                            {{ InvoiceLine.invoiceLineId}}
+                        </td>
+                        <td>
+                            {{ InvoiceLine.description}}
+                        </td>
+                        <td>
+                            {{ InvoiceLine.price | currency:'USD'}}
+                        </td>
+                        <td> {{ InvoiceLine.quantity}}
 
-<div style="padding-right: 10em;">
-<div class="row justify-content-around">
+                        </td>
+                        <td>
+                            {{ InvoiceLine.price *  InvoiceLine.quantity | currency:'USD' }}
+                        </td>
+                    </tr>
+
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">Grand Total</td>
+                        <td> $180</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </div>
+
+        <div style="padding-right: 10em;">
+            <div class="row justify-content-around">
+            </div>
+            <button type="button" class="btn btn-dark" [routerLink]="['/list-invoices']"> Back </button>
+            <button type="button" class="btn btn-dark" (click)="getPDF()"> Get PDF </button>
+        </div>
+
     </div>
-    <button type = "button" class="btn btn-dark" (click)="onBckClick()"  > Back </button> 
- <button type = "button" class="btn btn-dark" (click)="getPDF()"  > Get PDF </button>
-</div>
-</div>
+
 </div>
