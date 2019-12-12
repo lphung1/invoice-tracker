@@ -15,6 +15,8 @@ import { ChartsModule } from 'ng2-charts';
 import { InvoiceHistoryLineChartComponent } from './dashboard/invoice-history-line-chart/invoice-history-line-chart.component';
 import { PieChartComponent } from './dashboard/pie-chart/pie-chart.component';
 import { PaymentPortalComponent } from './payment-portal/payment-portal.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { PaymentPortalComponent } from './payment-portal/payment-portal.componen
     InvoiceHistoryLineChartComponent,
     PieChartComponent,
     PaymentPortalComponent,
+    LoginPageComponent,
+    NavBarComponent,
 
   ],
   imports: [

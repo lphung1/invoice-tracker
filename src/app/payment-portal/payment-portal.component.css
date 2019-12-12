@@ -51,20 +51,20 @@ body {
     outline: 0!important;
     height: 42px;
     font-size: 16px;
-    background-color: #54C7C3!important;
+    background-color: #33AEFF!important;
     border: none;
   }
   
   #PayButton:hover {
-    background-color: #6DCECB!important;
+    background-color: #33AEFF!important;
   }
   
   #PayButton:active {
-    background-color: #4FBCB9!important;
+    background-color: #33AEFF!important;
   }
   
   #PayButton:disabled {
-    background: rgba(84, 199, 195, .5)!important;
+    background: #33AEFF!important;
     color: #FFF!important;
   }
   
@@ -217,4 +217,9 @@ body {
   input:focus {
     border-color: #b0e5e3!important;
     background-color: #EEF9F9!important;
+  }
+
+  .background {
+    background: #007bff;
+    background: linear-gradient(to right, #0062E6, #33AEFF);
   }

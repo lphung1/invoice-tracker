@@ -1,8 +1,9 @@
-<br />
-
 <!-- <form name="newInvoiceForm" > -->
+<app-nav-bar></app-nav-bar>
+<div class = "card animate slideIn">
     <div class="form-group" id="formNewInvoice">
-        <label for="formGroupExampleInput">Customer</label>
+        <div class = "card-body">
+            <h3>Customer</h3>
         <select class="form-control" style="width: 80%;" >
             <option class = "text-muted">None Selected</option>
             <option name="customeName" *ngFor="let customers of customerList">{{customers.firstName}} {{customers.lastName}}</option>
@@ -46,8 +47,10 @@
 
             </tbody>
         </table>
-        <br />
-        <input class="btn btn-dark" type="submit" value="Submit">;
+        
+        <input class="btn btn-dark" type="submit" value="Submit">
         <input class="btn btn-dark" type="reset" value="Reset">
     </div>
+</div>
+</div>
 <!-- </form> -->

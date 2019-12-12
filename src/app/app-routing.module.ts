@@ -1,3 +1,4 @@
+import { LoginPageComponent } from './login-page/login-page.component';
 import { PaymentPortalComponent } from './payment-portal/payment-portal.component';
 import { InvoicelistComponent } from './Invoice/invoice-list/invoicelist.component';
 import { NewInvoiceComponent } from './Invoice/new-invoice/new-invoice.component';
@@ -27,6 +28,7 @@ const routes: Routes = [{
 {path: 'dashboard-home', component: DashboardComponent},
 {path: 'payment-portal', component: PaymentPortalComponent},
 {path: '', redirectTo: '/dashboard-home', pathMatch: 'full'},
+{path: 'log-in', component: LoginPageComponent}
  ];
 
 @NgModule({
