@@ -25,7 +25,7 @@ export class NewInvoiceComponent implements OnInit {
 
   newAttribute: any = {};
   constructor() { }
-
+  
   ngOnInit() {
 
     this.invoiceLineArray.push(new InvoiceLine());
@@ -34,9 +34,12 @@ export class NewInvoiceComponent implements OnInit {
   addFieldValue() {
     this.invoiceLineArray.push(new InvoiceLine());
     console.log("invoice lines in this invoice : " + this.invoiceLineArray[0].description + " " + this.invoiceLineArray[0].price);
+
   }
 
   deleteFieldValue(index) {
+    if (index!== 0 ) {
     this.invoiceLineArray.splice(index, 1);
+    }
   }
 }

@@ -25,7 +25,10 @@ export class InvoicedetailComponent implements OnInit {
 
   inv = this.service.getInvoice();
 
-
+  onBckClick()
+  {
+    window.history.back();
+  }
 
   ngOnInit() {
   }

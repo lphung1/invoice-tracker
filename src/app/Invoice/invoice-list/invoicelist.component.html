@@ -1,5 +1,5 @@
 <BR/>
-<div>
+<div class="divListInvoices">
 <table class="table table-striped">
     <thead class="thead-dark">
         <tr>
@@ -36,7 +36,7 @@
                 {{thisinvoice.genDate | date:"MMM dd yyyy"}}
             </td>
             <td>
-                {{thisinvoice.amount}}
+                {{thisinvoice.amount | currency:'USD'}}
             </td>
             <td>
                 {{thisinvoice.status}}
@@ -45,7 +45,7 @@
                 {{thisinvoice.dueDate | date:"MMM dd yyyy"}}
             </td>
             <td>
-                <button (click)="OnSelect(thisinvoice)"  [routerLink] = "['/list-invoicesDetails']" >details</button>
+                <button class="btn btn-dark" (click)="OnSelect(thisinvoice)" [routerLink] = "['/list-invoicesDetails']" >details</button>
         </tr>
 
     </tbody>
