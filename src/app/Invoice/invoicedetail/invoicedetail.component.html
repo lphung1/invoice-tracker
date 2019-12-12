@@ -1,5 +1,6 @@
 <BR/>
 <div class="container">
+        <div id="pdfContent" >
         <div class="row">
 <div class="col-sm-8"> <h3>Invoice No.  {{ inv.invoiceId }} </h3>
     <b>Due date: </b> {{inv.dueDate | date:"MMM dd yyyy" }}
@@ -19,6 +20,7 @@
 <br/>
 
 <div style="padding-left: 10em;">
+    
 <table class="table table-striped" style="width: 80%;">
     <thead class="thead-dark">
         <tr>
@@ -67,11 +69,12 @@
         </tr>
       </tfoot>
 </table>
+
 <div style="padding-right: 10em;">
 <div class="row justify-content-around">
-
+    </div>
     <button type = "button" class="btn btn-dark" (click)="onBckClick()"  > Back </button> 
- <button type = "button" class="btn btn-dark" > Get PDF </button>
+ <button type = "button" class="btn btn-dark" (click)="getPDF()"  > Get PDF </button>
 </div>
 </div>
 </div>
