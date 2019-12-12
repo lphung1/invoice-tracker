@@ -2,6 +2,9 @@ import { InvoiceDetailService } from './../../invoice-detail.service';
 import { Invoice } from './../../Models/Invoice';
 import { Component, OnInit, Input } from '@angular/core';
 import { InvoiceLine } from './../../Models/InvoiceLine';
+import { PDFJS } from 'pdfjs-dist';
+import * as jspdf from 'jspdf';
+import html2canvas from 'html2canvas'
 
 @Component({
   selector: 'app-invoicedetail',
@@ -25,7 +28,20 @@ export class InvoicedetailComponent implements OnInit {
 
   inv = this.service.getInvoice();
 
+  onBckClick()
+  {
+    window.history.back();
+  }
 
+  getPDF() {
+    //const elementToPrint = document.getElementById('pdfContent'); 
+    //const pdf = new jsPDF('p', 'pt', 'a4');
+    //pdf.addHTML(elementToPrint, () => {
+    //pdf.save('web.pdf');
+
+
+
+  }
 
   ngOnInit() {
   }
