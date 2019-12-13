@@ -17,6 +17,7 @@ import { PieChartComponent } from './dashboard/pie-chart/pie-chart.component';
 import { PaymentPortalComponent } from './payment-portal/payment-portal.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { NewCustomerComponent } from './customer/new-customer/new-customer.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     PaymentPortalComponent,
     LoginPageComponent,
     NavBarComponent,
+    NewCustomerComponent,
 
   ],
   imports: [

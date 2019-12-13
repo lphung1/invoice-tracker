@@ -9,6 +9,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
+  element: HTMLElement;
+
+
 
   constructor(private router: Router) { }
 LoginForm: FormGroup;
@@ -29,9 +32,9 @@ get loginId() { return this.LoginForm.get('loginId'); }
 get password() { return this.LoginForm.get('password'); }
 
 onSubmit() {
-  //if ((this.LoginForm.get('loginId').value) && (this.LoginForm.get('password').value))
+  //if((this.loginId.value) && (this.password.value))
  {
-   
+  console.log(document.getElementById('loginId'));
   this.router.navigate(['dashboard-home']);
   }
 }

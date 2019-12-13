@@ -12,13 +12,12 @@
           
           <form name="LoginForm" >
       
-            <input formControlName="loginId" 
-            type="text" id="loginId" required class="fadeIn second form-control" name="loginId" placeholder="login" > 
+            <input formControlName="loginId" type="text" id="loginId" required class="fadeIn second form-control" name="loginId" placeholder="login"  > 
             <div *ngIf="loginId.errors.required">
               Name is required.
             </div>
             
-            <input type="text" formControlName="password" id="password" class="fadeIn third" name="password" placeholder="password" >
+            <input type="text" formControlName="password" id="password" required class="fadeIn second form-control" name="password" placeholder="password"  >
             <div *ngIf="password.errors.required">
               Password is required.
             </div>
