@@ -1,27 +1,33 @@
 
     
-<form>
-    <div class="form-group" style="width: 60%; padding-left: 5em;">
-        <label for="formGroupExampleInput">First Name</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" >
-    <label for="formGroupExampleInput2">Last Name</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" >
-    <label for="formGroupExampleInput2">Adress</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" >
-    <label for="formGroupExampleInput2">Email</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" >
-    <label for="formGroupExampleInput2">City</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" >
-    <label for="formGroupExampleInput2">State</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" >
-    <label for="formGroupExampleInput2">Phone Number</label>
-    <input type="number" class="form-control" id="formGroupExampleInput2"  >
+<app-nav-bar></app-nav-bar>
+
+    <div class="form-group text-center" style="width: 60%; padding-left: 10em;">
+        <div class="form-row">
+        <div class="col">
+        <label for="formGroupExampleInput">First Name:</label>
+    <input type="text" class="form-control" [(ngModel)]="customer.firstName" name="firstName" placeholder="First Name" >
+        </div>
+        <div class="col">
+    <label for="formGroupExampleInput2">Last Name:</label>
+    <input type="text" class="form-control" [(ngModel)]="customer.lastName" name="lastName" placeholder="Last Name" >
+</div>
+</div>
+    <label for="formGroupExampleInput2">Email:</label>
+    <input type="text" class="form-control" [(ngModel)]="customer.customerEmail" name="email" placeholder="Addrress" >
+    
+    <label for="formGroupExampleInput2">City:</label>
+    <input type="text" class="form-control" [(ngModel)]="customer.customerCity" name="city" placeholder="city" >
+    <label for="formGroupExampleInput2">State:</label>
+    <input type="text" class="form-control" [(ngModel)]="customer.customerState" name="state" placeholder="state" >
+    <label for="formGroupExampleInput2" >Phone Number:</label>
+    <input type="number" class="form-control" [(ngModel)]="customer.customerPhoneNumber" name="phone" placeholder="phone number">
     <br />
-    <div style="padding-left: 10em;" >
-    <input class="btn btn-dark" type="submit" value="Submit"> &nbsp;
+    <div >
+    <input class="btn btn-dark" type="submit" value="Submit" (click)="OnSubmit()"  > &nbsp;
         <input class="btn btn-dark" type="reset" value="Reset">
     
     </div>
 </div>
-    </form>
+   
 
