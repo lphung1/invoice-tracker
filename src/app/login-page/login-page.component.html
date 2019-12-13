@@ -9,17 +9,23 @@
     
         <div id="formContent">
                 <h2 class = "card-title">Log Into NullPoint Invoicing</h2>
-          <!-- Tabs Titles -->
-
+          
+          <form name="LoginForm" >
       
-          <!-- Login Form -->
-          <form>
-            <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-            <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-            <input type="submit" class="fadeIn fourth" value="Log In" routerLink = "['/dashboard-home']">
+            <input formControlName="loginId" 
+            type="text" id="loginId" required class="fadeIn second form-control" name="loginId" placeholder="login" > 
+            <div *ngIf="loginId.errors.required">
+              Name is required.
+            </div>
+            
+            <input type="text" formControlName="password" id="password" class="fadeIn third" name="password" placeholder="password" >
+            <div *ngIf="password.errors.required">
+              Password is required.
+            </div>
+            <input type="submit" class="fadeIn fourth" value="Log In"  (click)="onSubmit()"   >
           </form>
-      
-          <!-- Remind Passowrd -->
+  
+          
 
       
         </div>
