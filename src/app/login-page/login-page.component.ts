@@ -1,3 +1,5 @@
+import { UserService } from './../user.service';
+import { User } from './../Models/User';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -10,33 +12,24 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class LoginPageComponent implements OnInit {
   element: HTMLElement;
+  thisUser: User = new User () ;
 
 
+  constructor(private router: Router, private userService: UserService) { }
 
-  constructor(private router: Router) { }
-LoginForm: FormGroup;
 
   ngOnInit() {
 
-
-    this.LoginForm = new FormGroup ({
-      loginId: new FormControl(this.LoginForm, [
-        Validators.required
-      ] ),
-      password: new FormControl(this.LoginForm, [
-        Validators.required
-      ] )
-    });
-  }
-get loginId() { return this.LoginForm.get('loginId'); }
-get password() { return this.LoginForm.get('password'); }
+      }
 
 onSubmit() {
-  //if((this.loginId.value) && (this.password.value))
- {
-  console.log(document.getElementById('loginId'));
-  this.router.navigate(['dashboard-home']);
-  }
-}
+   if((this.thisUser.userName == null) || (this.thisUser.password == null)) {
+    window.alert('enter username and password') ;
+  } else { 
+   //this.userService.getUser(this.thisUser);
+    this.router.navigate(['dashboard-home']) ;
 
+  }
+
+}
 }
