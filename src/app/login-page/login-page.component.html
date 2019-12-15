@@ -10,19 +10,14 @@
         <div id="formContent">
                 <h2 class = "card-title">Log Into NullPoint Invoicing</h2>
           
-          <form name="LoginForm" >
+
       
             <input formControlName="loginId" type="text" id="loginId" required class="fadeIn second form-control" name="loginId" placeholder="login"  > 
-            <div *ngIf="loginId.errors.required">
-              Name is required.
-            </div>
-            
+
             <input type="text" formControlName="password" id="password" required class="fadeIn second form-control" name="password" placeholder="password"  >
-            <div *ngIf="password.errors.required">
-              Password is required.
-            </div>
-            <input type="submit" class="fadeIn fourth" value="Log In"  (click)="onSubmit()"   >
-          </form>
+
+            <input type="submit" class="fadeIn fourth" value="Log In"  (click)="onSubmit()" [routerLink] = "['/dashboard-home']" >
+
   
           
 
