@@ -15,20 +15,19 @@ export class LoginPageComponent implements OnInit {
   thisUser: User = new User () ;
 
 
-  constructor(private router: Router, private userService: UserService) { }
+  constructor(private router: Router) { }
 
 
   ngOnInit() {
 
       }
-
 onSubmit() {
    if((this.thisUser.userName == null) || (this.thisUser.password == null)) {
     window.alert('enter username and password') ;
   } else { 
-   //this.userService.getUser(this.thisUser);
+  
     this.router.navigate(['dashboard-home']) ;
-
+    
   }
 
 }
