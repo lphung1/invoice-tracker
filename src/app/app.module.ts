@@ -18,6 +18,7 @@ import { PaymentPortalComponent } from './payment-portal/payment-portal.componen
 import { LoginPageComponent } from './login-page/login-page.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NewCustomerComponent } from './customer/new-customer/new-customer.component';
+import { SalesDoughnutChartComponent } from './dashboard/sales-doughnut-chart/sales-doughnut-chart.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { NewCustomerComponent } from './customer/new-customer/new-customer.compo
     LoginPageComponent,
     NavBarComponent,
     NewCustomerComponent,
+    SalesDoughnutChartComponent,
 
   ],
   imports: [
