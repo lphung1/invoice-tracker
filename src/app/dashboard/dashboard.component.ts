@@ -1,3 +1,4 @@
+import { InvoiceService } from './../invoice.service';
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
@@ -29,9 +30,12 @@ export class DashboardComponent implements OnInit {
   
   
 
-  constructor() { }
+  constructor(private service: InvoiceService) { }
 
   ngOnInit() {
+
+    console.log(this.service.getAllInvoice().subscribe(user => console.log(user)));
+
   }
 
   public recentInvoiceTable(){

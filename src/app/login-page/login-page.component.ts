@@ -12,7 +12,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class LoginPageComponent implements OnInit {
   element: HTMLElement;
-  thisUser: User = new User () ;
+  thisUser: User = new User();
 
 
   constructor(private router: Router, private userService: UserService) { }
@@ -20,17 +20,17 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit() {
 
-      }
-onSubmit() {
-   if((this.thisUser.userName == null) || (this.thisUser.password == null)) {
-    window.alert('enter username and password') ;
-  } else { 
-    
-    console.log(this.userService.postUser(this.thisUser).subscribe.toString);
-
-    //this.router.navigate(['dashboard-home']) ;
-    
   }
+  onSubmit() {
+    if ((this.thisUser.userName == null) || (this.thisUser.password == null)) {
+      window.alert('enter username and password');
+    } else {
 
-}
+      console.log(this.userService.postUser(this.thisUser).subscribe(user => console.log(user)));
+
+      //this.router.navigate(['dashboard-home']) ;
+
+    }
+
+  }
 }
