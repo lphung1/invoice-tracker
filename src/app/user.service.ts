@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class UserService {
 
   // need to enter spring api URL
-  url = '/invoiceTracker/';
+  url = 'http://localhost:8080/invoiceTracker/';
   private user: User;
   constructor(private http: HttpClient) { }
 
