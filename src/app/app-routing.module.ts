@@ -29,7 +29,7 @@ const routes: Routes = [{
 { path: 'new-invoice', component: NewInvoiceComponent },
 {path: 'dashboard-home', component: DashboardComponent},
 {path: 'payment-portal', component: PaymentPortalComponent},
-{path: '', redirectTo: '/dashboard-home', pathMatch: 'full'},
+{path: '', redirectTo: '/log-in', pathMatch: 'full'},
 {path: 'log-in', component: LoginPageComponent},
 {path: 'new-customer', component: NewCustomerComponent}
  ];
