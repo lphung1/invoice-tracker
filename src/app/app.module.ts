@@ -19,6 +19,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NewCustomerComponent } from './customer/new-customer/new-customer.component';
 import { SalesDoughnutChartComponent } from './dashboard/sales-doughnut-chart/sales-doughnut-chart.component';
+import { HttpClientModule  } from '@angular/common/http';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { SalesDoughnutChartComponent } from './dashboard/sales-doughnut-chart/sa
     AppRoutingModule,
     FormsModule,
     ChartsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

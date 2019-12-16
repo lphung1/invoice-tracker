@@ -9,12 +9,12 @@ import { Observable } from 'rxjs';
 export class UserService {
 
   // need to enter spring api URL
-  url = "";
+  url = '/invoiceTracker/';
   private user: User;
   constructor(private http: HttpClient) { }
 
-  getUser(thisuser: User): Observable<any> {
-    const api = 'api/getuser';
+  postUser(thisuser: User): Observable<any> {
+    const api = 'api/login';
     return this.http.post(this.url + api, thisuser);
   }
 
