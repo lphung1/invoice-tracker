@@ -34,7 +34,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
 
-    console.log(this.service.getAllInvoice().subscribe(user => console.log(user)));
+    console.log(this.service.getAllInvoice().subscribe(foos => console.log(foos)));
 
   }
 

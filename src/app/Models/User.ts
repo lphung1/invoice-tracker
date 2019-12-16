@@ -1,13 +1,11 @@
 export class User {
 
     userId: number;
-    userName: string;
+    username: string;
     password: string;
-    firstName: string;
-    lastName: string;
-    Address: string;
-    Email: string;
- 
+    userFirstname: string;
+    userLastame: string;
+    userAddress: string;
     constructor() {
 
     }

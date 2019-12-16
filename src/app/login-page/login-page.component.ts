@@ -22,11 +22,12 @@ export class LoginPageComponent implements OnInit {
 
   }
   onSubmit() {
-    if ((this.thisUser.userName == null) || (this.thisUser.password == null)) {
+    if ((this.thisUser.username == null) || (this.thisUser.password == null)) {
       window.alert('enter username and password');
     } else {
 
-      console.log(this.userService.postUser(this.thisUser).subscribe(user => console.log(user)));
+      console.log("login info " + this.thisUser.username  + " " + this.thisUser.password);
+      console.log(this.userService.postUser(this.thisUser).subscribe(foos => console.log(foos)));
 
       //this.router.navigate(['dashboard-home']) ;
 
