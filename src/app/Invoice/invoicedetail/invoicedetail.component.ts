@@ -1,3 +1,4 @@
+import { InvoiceService } from './../../service/invoice.service';
 import { InvoiceDetailService } from '../../service/invoice-detail.service';
 import { Invoice } from './../../Models/Invoice';
 import { Component, OnInit, Input } from '@angular/core';
@@ -15,14 +16,9 @@ export class InvoicedetailComponent implements OnInit {
 
   @Input() invoice: Invoice;
 
-  constructor(private service: InvoiceDetailService) { }
+  constructor(private service: InvoiceDetailService, private invService: InvoiceService) { }
 
-  invoicelines: InvoiceLine[] = [
-    { invoiceId: 1, invoiceLineId: 1, description: 'plumbing', price: 2500, quantity: 1 },
-    { invoiceId: 1, invoiceLineId: 2, description: 'electrical', price: 500, quantity: 1 },
-    { invoiceId: 1, invoiceLineId: 3, description: 'regrigeration', price: 52500, quantity: 1 },
-
-  ];
+  invoicelines: InvoiceLine[];
 
 
   inv = this.service.getInvoice();
@@ -49,7 +45,22 @@ export class InvoicedetailComponent implements OnInit {
 
   }
 
+  calcTotal(inv: Invoice): number{
+    //console.log("calc total var" + inv.invoiceLine);
+    let sum = 0;
+    let i = inv.invoiceLine;
+    i.forEach(element => {
+      //console.log("element price for invoice line and quanitty " + element.cost + " " + element.quantity );
+      //console.log("q * cost " + element.cost * element.quantity);
+      sum = sum + (element.cost * element.quantity);
+    });
+    //console.log("sum " + sum);
+    return sum;
+
+  }
+
   ngOnInit() {
+    this.invoicelines = this.invService.getDetailInvoice().invoiceLine;
   }
 
 }

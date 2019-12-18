@@ -1,8 +1,8 @@
 export class Customer {
 
     customerId: number;
-    firstName: string;
-    lastName: string;
+    customerFirstname: string;
+    customerLastname: string;
     customerAddress: string;
     customerEmail: string;
     customerCity: string;

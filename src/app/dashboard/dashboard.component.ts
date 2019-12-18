@@ -42,10 +42,11 @@ export class DashboardComponent implements OnInit {
     console.log('cookie ' + cookieVal);
     this.invoiceService.getAllInvoice().subscribe(foos  => {
 
-      console.log(foos );
+      console.log("Being saved in ngOnInit" + foos );
       this.invoiceService.saveArr(foos );
       this.invoiceDash = this.invoiceService.getInvoiceArr();
       console.log("Invoice id for invoice dash arr " + this.invoiceDash[0].invoiceId);
+      console.log("Size " + this.invoiceDash.length);
 
     });
 

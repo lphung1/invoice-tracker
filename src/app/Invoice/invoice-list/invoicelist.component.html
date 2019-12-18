@@ -1,56 +1,57 @@
 <app-nav-bar></app-nav-bar>
-<BR/>
+<BR />
 <div class="divListInvoices animate slideIn">
-<table class="table table-striped">
-    <thead class="thead-dark">
-        <tr>
-<th>
-    Invoice No.
-</th>
-<th>
-    Customer Name
-</th>
-<th> Genenerated
-    Date
-</th>
-<th>
-    Amount
-</th>
-<th>
-        Status
-</th>
-<th>
-    Due date
-</th>
-<th></th>
-</tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let thisinvoice of invocies" >
-            <td>
-                {{thisinvoice.invoiceId}}
-            </td>
-            <td>
-                {{thisinvoice.customer}}
-            </td>
-            <td>
-                {{thisinvoice.genDate | date:"MMM dd yyyy"}}
-            </td>
-            <td>
-                {{thisinvoice.amount | currency:'USD'}}
-            </td>
-            <td>
-                {{thisinvoice.status}}
-            </td>
-            <td>
-                {{thisinvoice.dueDate | date:"MMM dd yyyy"}}
-            </td>
-            <td>
-                <button class="btn btn-dark" (click)="OnSelect(thisinvoice)" [routerLink] = "['/list-invoicesDetails']" >Details</button>
-        </tr>
-
-    </tbody>
-</table>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    Invoice #
+                </th>
+                <th>
+                    Customer Name
+                </th>
+                <th> Genenerated
+                    Date
+                </th>
+                <th>
+                    Amount
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    Due date
+                </th>
+                <th> Total {{invocieListInvoices.length}} </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let thisinvoice of invocieListInvoices">
+                <td>
+                    {{thisinvoice.invoiceId}}
+                </td>
+                <td>
+                    {{thisinvoice.customer.customerFirstname}} {{thisinvoice.customer.customerLastname}}
+                </td>
+                <td>
+                    {{thisinvoice.createDate | date:"MMM dd yyyy"}}
+                </td>
+                <td>
+                    {{calcTotal(thisinvoice) | currency:'USD'}}
+                </td>
+                <td>
+                    {{ setStatus(thisinvoice.paidStatus) }}
+                </td>
+                <td>
+                    {{thisinvoice.dueDate | date:"MMM dd yyyy"}}
+                </td>
+                <td>
+                    <button class="btn btn-dark" (click)="OnSelect(thisinvoice)"
+                        [routerLink]="['/list-invoicesDetails']">Details</button>
+            </tr>
 
 
 
+        </tbody>
+
+    </table>

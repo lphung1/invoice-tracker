@@ -26,12 +26,20 @@ export class InvoiceService {
   }
 
   saveArr(thisInvoiceArr: Invoice []): void {
-    console.log('thisInvoiceArray: ' + thisInvoiceArr);
+    console.log('saveArr thisInvoiceArray: ' + thisInvoiceArr);
     this.invoiceArr = thisInvoiceArr;
   }
 
   getInvoiceArr(): Invoice[] {
     return this.invoiceArr;
+  }
+
+  saveDetailInvoice(inv: Invoice): void {
+    this.invoice = inv;
+  }
+
+  getDetailInvoice(){
+    return this.invoice;
   }
 
 

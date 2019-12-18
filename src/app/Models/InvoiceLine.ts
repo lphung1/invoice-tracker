@@ -1,9 +1,9 @@
 export class InvoiceLine {
     invoiceLineId: number;
     invoiceId: number;
-    description: string;
+    invoiceLineitemDescription: string;
     quantity: number;
-    price: number;
+    cost: number;
     // total: number;
 
 constructor()
