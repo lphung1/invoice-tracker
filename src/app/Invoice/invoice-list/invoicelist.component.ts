@@ -44,11 +44,11 @@ export class InvoicelistComponent implements OnInit {
     let sum = 0;
     let i = inv.invoiceLine;
     i.forEach(element => {
-      console.log("element price for invoice line and quanitty " + element.cost + " " + element.quantity );
-      console.log("q * cost " + element.cost * element.quantity);
+      //console.log("element price for invoice line and quanitty " + element.cost + " " + element.quantity );
+      //console.log("q * cost " + element.cost * element.quantity);
       sum = sum + (element.cost * element.quantity);
     });
-    console.log("sum " + sum);
+    //console.log("sum " + sum);
     return sum;
 
   }
