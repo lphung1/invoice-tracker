@@ -35,7 +35,15 @@ export class PieChartComponent implements OnInit {
 
   ngOnInit() {
 
+    this.openInvoice = 0;
+    this.paidInvoice = 0;
+    this.overDueInvoice = 0;
+
     this.invoiceArr = this.invoService.getInvoiceArr();
+
+    this.calcOverDue();
+    this.calcPaid();
+
     this.pieChartData = [this.overDueInvoice, this.paidInvoice, this.openInvoice];
 
   }
@@ -43,10 +51,7 @@ export class PieChartComponent implements OnInit {
   ngAfterContentInit(): void {
     //Called after ngOnInit when the component's or directive's content has been initialized.
     //Add 'implements AfterContentInit' to the class.
-    this.calcOverDue();
-    this.calcPaid();
 
-    this.pieChartData = [this.overDueInvoice, this.paidInvoice, this.openInvoice];
     
   }
 
