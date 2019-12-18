@@ -1,5 +1,5 @@
 import { InvoiceLine } from './../../Models/InvoiceLine';
-import { InvoiceDetailService } from './../../invoice-detail.service';
+import { InvoiceDetailService } from '../../service/invoice-detail.service';
 import { InvoicedetailComponent } from './../invoicedetail/invoicedetail.component';
 import { Invoice } from './../../Models/Invoice';
 import { Component, OnInit, ɵConsole } from '@angular/core';

@@ -1,4 +1,6 @@
-import { InvoiceService } from './../invoice.service';
+import { InvoiceService } from './../service/invoice.service';
+import { Invoice } from './../Models/Invoice';
+import { CookieService } from 'ngx-cookie-service';
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
@@ -28,19 +30,32 @@ export class DashboardComponent implements OnInit {
 
 
   
-  
+  private invoiceDash: Invoice[];
 
-  constructor(private service: InvoiceService) { }
+  constructor(private invoiceService: InvoiceService, private cookieServ: CookieService) { }
 
   ngOnInit() {
+    // grab user id from cookie
 
-    console.log(this.service.getAllInvoice().subscribe(foos => console.log(foos)));
+    // http get /invoices?user=id
+    const cookieVal = this.cookieServ.get('userId');
+    console.log('cookie ' + cookieVal);
+    this.invoiceService.getAllInvoice().subscribe(foos  => {
+
+      console.log(foos );
+      this.invoiceService.saveArr(foos );
+      this.invoiceDash = this.invoiceService.getInvoiceArr();
+      console.log("Invoice id for invoice dash arr " + this.invoiceDash[0].invoiceId);
+
+    });
+
+    //this.invoiceDash = this.service.getAllInvoice();
 
   }
 
-  public recentInvoiceTable(){
 
-    
+  public recentInvoiceTable() {
+
 
   }
 
