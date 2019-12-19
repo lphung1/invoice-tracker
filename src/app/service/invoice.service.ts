@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class InvoiceService {
 
-  url = 'http://localhost:8080/invoiceTracker/api/';
+  url = 'http://ec2-54-172-38-88.compute-1.amazonaws.com:8080/invoiceTracker/api/';
 
   private invoice: Invoice;
   private invoiceArr: Invoice [];
