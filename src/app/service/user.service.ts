@@ -28,5 +28,10 @@ export class UserService {
     return this.user;
   }
 
+  getUserFromDb(id: number){
+    const api = "api/user?userId="
+    return this.http.get(this.url + api + id);
+  }
+
 
 }

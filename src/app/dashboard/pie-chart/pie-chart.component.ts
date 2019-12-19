@@ -29,8 +29,6 @@ export class PieChartComponent implements OnInit {
   public pieChartPlugins = [];
 
 
-
-
   constructor(private invoService: InvoiceService) { }
 
   ngOnInit() {
@@ -55,6 +53,15 @@ export class PieChartComponent implements OnInit {
     
   }
 
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+    this.calcOverDue();
+    this.calcPaid();
+    this.pieChartData = [this.overDueInvoice, this.paidInvoice, this.openInvoice];
+    
+  }
+
   calcPaid() {
     this.paidInvoice = 0;
     this.invoiceArr.forEach(element => {
@@ -65,18 +72,19 @@ export class PieChartComponent implements OnInit {
 
   }
 
-  calcOverDue(){
+  calcOverDue() {
 
     this.overDueInvoice = 0;
+    this.openInvoice = 0;
     const myDate = new Date();
 
 
     this.invoiceArr.forEach(element => {
 
-      console.count("Dates, Due, now " + new Date(element.dueDate) + "-- " + myDate);
+      //console.count("Dates, Due, now " + new Date(element.dueDate) + "-- " + myDate);
       if(new Date(element.dueDate) > myDate) {
 
-        console.log("Date after today");
+        //console.log("Date after today");
         this.overDueInvoice++;
 
       }

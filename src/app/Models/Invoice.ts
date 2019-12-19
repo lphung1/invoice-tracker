@@ -1,3 +1,4 @@
+import { User } from './User';
 import { Customer } from './Customer';
 import { InvoiceLine } from './InvoiceLine';
 export class Invoice {
@@ -8,6 +9,7 @@ export class Invoice {
     amount: number;
     paidStatus: boolean;
     invoiceLine: InvoiceLine[];
+    user: User;
 
     constructor() {
 

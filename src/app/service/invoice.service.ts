@@ -19,7 +19,7 @@ export class InvoiceService {
   getAllInvoice(): Observable<any> {
     const loggedUser = this.userServ.getUser();
     const userIdCookieVal = this.cookieServ.get('userId');
-    const api = 'invoice?userId=' + 1;
+    const api = 'invoice?userId=' + 2;
     console.log("api " + api);
     console.log("cookie val " + userIdCookieVal);
     return this.http.get(this.url + api);
@@ -40,6 +40,11 @@ export class InvoiceService {
 
   getDetailInvoice(){
     return this.invoice;
+  }
+
+  SaveNewInvoice(invo: Invoice): Observable<any> {
+
+    return this.http.post(this.url + 'invoice', invo);
   }
 
 

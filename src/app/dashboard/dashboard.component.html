@@ -20,7 +20,7 @@
                         <i class="fa fa-user fa-4x"></i>
                     </div>
                     <h6 class="text-uppercase">Weekly Revenue</h6>
-                    <h1 class="display-4">$1423.12</h1>
+                    <h2 class="">{{weeklyRevenue | currency:'USD'}}</h2>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
                     <div class="rotate">
                     </div>
                     <h6 class="text-uppercase">Invoices Created This Week</h6>
-                    <h1 class="display-4">5</h1>
+                    <h1 class="display-4">{{createdInvoices}}</h1>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
                         <i class="fa fa-list fa-4x"></i>
                     </div>
                     <h6 class="text-uppercase">Total Unpaid Invoices</h6>
-                    <h1 class="display-4">14</h1>
+                    <h1 class="display-4">{{unPaid}}</h1>
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
                         <i class="fa fa-share fa-4x"></i>
                     </div>
                     <h6 class="text-uppercase">Total Accounts Recievable</h6>
-                    <h1 class="display-4">$846.27</h1>
+                    <h2 class="">{{accountsRecievable | currency:'USD'}}</h2>
                 </div>
             </div>
         </div>

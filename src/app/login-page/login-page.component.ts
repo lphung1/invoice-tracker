@@ -30,6 +30,7 @@ export class LoginPageComponent implements OnInit {
 
       this.userService.postUser(this.thisUser).subscribe(obj => {
         console.log('Login returned: ' + obj);
+        this.userService.saveUser(obj);
         this.thisUser = obj; // store a cookie instead
         console.log(this.thisUser);
         this.router.navigate(['/dashboard-home']);

@@ -29,14 +29,19 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class DashboardComponent implements OnInit {
 
 
-  
+  unPaid: number = 0;
+  private paidNum: number = 0;
   private invoiceDash: Invoice[];
+  accountsRecievable: number = 0;
+  private myDate: Date;
+  weeklyRevenue: number;
+  createdInvoices: number;
 
   constructor(private invoiceService: InvoiceService, private cookieServ: CookieService) { }
 
   ngOnInit() {
     // grab user id from cookie
-
+    this.myDate = new Date();
     // http get /invoices?user=id
     const cookieVal = this.cookieServ.get('userId');
     console.log('cookie ' + cookieVal);
@@ -50,13 +55,90 @@ export class DashboardComponent implements OnInit {
 
     });
 
-    //this.invoiceDash = this.service.getAllInvoice();
+
+    this.calcUnpaid();
+
+    // this.invoiceDash = this.service.getAllInvoice();
+
+
+  }
+
+  ngAfterContentInit(): void {
+    // Called after ngOnInit when the component's or directive's content has been initialized.
+    // Add 'implements AfterContentInit' to the class.
+    //this.calcUnpaid();
+
+
+  }
+
+  ngAfterViewInit() {
+
+    this.calcUnpaid();
+    this.calcAccountsRecievable();
+    this.calcWeeklyRevenue();
+
+  }
+
+
+  calcUnpaid() {
+    this.unPaid = 0;
+    this.invoiceDash.forEach(element => {
+      console.log("checking unpaid plus one");
+      if (element.paidStatus == false) {
+        this.unPaid = this.unPaid + 1;
+      }
+    });
+
+  }
+
+  calcAccountsRecievable() {
+
+    this.accountsRecievable = 0;
+
+    this.invoiceDash.forEach(element => {
+      if(element.paidStatus == false){
+        this.accountsRecievable = this.accountsRecievable + this.calcTotal(element);
+      }
+    });
+
+  }
+
+  calcWeeklyRevenue() {
+    this.weeklyRevenue = 0;
+    this.createdInvoices = 0;
+    this.invoiceDash.forEach(element => {
+      if (new Date(element.dueDate) > this.myDate && element.paidStatus === true) {
+        this.weeklyRevenue = this.weeklyRevenue + this.calcTotal(element);
+        this.createdInvoices++;
+      }
+    });
+
+  }
+
+  calcTotal(inv: Invoice): number {
+    // console.log("calc total var" + inv.invoiceLine);
+    let sum = 0;
+    let i = inv.invoiceLine;
+    i.forEach(element => {
+      // console.log("element price for invoice line and quanitty " + element.cost + " " + element.quantity );
+      // console.log("q * cost " + element.cost * element.quantity);
+      sum = sum + (element.cost * element.quantity);
+    });
+    // console.log("sum " + sum);
+    return sum;
 
   }
 
 
   public recentInvoiceTable() {
 
+
+  }
+
+  public endOfWeek(date){
+
+    var lastday = date.getDate() - (date.getDay() - 1) + 6;
+    return new Date(date.setDate(lastday));
 
   }
 
