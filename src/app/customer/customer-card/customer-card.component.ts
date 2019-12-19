@@ -7,13 +7,16 @@ import { Customer } from 'src/app/Models/Customer';
 })
 export class CustomerCardComponent implements OnInit {
 
+  private imgsrc = "../assets/default.png";
   constructor() { }
 
   @Input() thisCustomer: Customer ;
 
   
-
   ngOnInit() {
+    if(this.thisCustomer.customerPicture != null){
+      this.imgsrc = this.thisCustomer.customerPicture;
+    }
   }
 
 }

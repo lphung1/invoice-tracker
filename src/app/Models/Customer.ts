@@ -1,3 +1,4 @@
+import { User } from './User';
 export class Customer {
 
     customerId: number;
@@ -7,10 +8,11 @@ export class Customer {
     customerEmail: string;
     customerCity: string;
     customerState: string;
-    customerPhoneNumber: number;
-
-    constructor(){
-
+    customerPhoneNumber: string;
+    customerPicture: string;
+    user: User;
+    constructor() {
+        this.user = new User();
     }
 
 }
