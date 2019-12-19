@@ -6,7 +6,7 @@
             <h3>Customer</h3>
         <select class="form-control" style="width: 80%;" >
             <option class = "text-muted">None Selected</option>
-            <option name="customeName" *ngFor="let customers of customerList">{{customers.firstName}} {{customers.lastName}}</option>
+            <option id = "customerSelected" name="customerSelected" *ngFor="let customers of customerList">{{customers.customerFirstname}} {{customers.customerLastname}} </option>
         </select>
 
 
@@ -22,13 +22,13 @@
                 
                 <tr *ngFor="let invoiceLineRow of invoiceLineArray; let i = index">
                     <td>
-                        <input type="text" [(ngModel)]= "invoiceLineArray[i].description" name="description"  >
+                        <input type="text" [(ngModel)]= "invoiceLineArray[i].invoiceLineitemDescription" name="description"  >
                     </td>
                     <td>
                         <div class="input-group-prepend">
                             <span class="input-group-text">$</span>
 
-                            <input class="form-control" type="number" [(ngModel)]= "invoiceLineArray[i].price" name="name">
+                            <input class="form-control" type="number" [(ngModel)]= "invoiceLineArray[i].cost" name="name">
                         </div>
                     </td>
                     <td>
@@ -50,7 +50,7 @@
             </tbody>
         </table>
         <br />
-        <input class="btn btn-dark" type="submit" value="Submit"> &nbsp; &nbsp;
+        <input class="btn btn-dark" type="submit" value="Submit" (click) = "submitInvoice()"> &nbsp; &nbsp;
         <input class="btn btn-dark" type="reset" value="Reset">
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { UserService } from './../user.service';
+import { UserService } from '../service/user.service';
 import { User } from './../Models/User';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -26,11 +26,15 @@ export class LoginPageComponent implements OnInit {
       window.alert('enter username and password');
     } else {
 
-      //console.log("login info " + this.thisUser.username  + " " + this.thisUser.password);
-      //console.log(this.userService.postUser(this.thisUser).subscribe(foos => console.log(foos)));
+      console.log("login info " + this.thisUser.username + " " + this.thisUser.password);
 
-      this.router.navigate(['dashboard-home']);
-
+      this.userService.postUser(this.thisUser).subscribe(obj => {
+        console.log('Login returned: ' + obj);
+        this.userService.saveUser(obj);
+        this.thisUser = obj; // store a cookie instead
+        console.log(this.thisUser);
+        this.router.navigate(['/dashboard-home']);
+      });
     }
 
   }

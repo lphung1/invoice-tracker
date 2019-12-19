@@ -1,16 +1,20 @@
+import { User } from './User';
+import { Customer } from './Customer';
 import { InvoiceLine } from './InvoiceLine';
 export class Invoice {
     invoiceId: number;
-    customer: string;
-    genDate: Date;
-    amount: number;
+    customer: Customer;
+    createDate: Date;
     dueDate: Date;
-    status: string;
-    invoiceLines: InvoiceLine[];
-    constructor()
-    {
-    this.invoiceLines = [];
-}
+    amount: number;
+    paidStatus: boolean;
+    invoiceLine: InvoiceLine[];
+    user: User;
+
+    constructor() {
+
+     this.invoiceLine = [];
+    }
 
 }
 

@@ -1,5 +1,5 @@
-import { InvoiceLine } from './Models/InvoiceLine';
-import { Invoice } from './Models/Invoice';
+import { InvoiceLine } from '../Models/InvoiceLine';
+import { Invoice } from '../Models/Invoice';
 import { Injectable } from '@angular/core';
 
 @Injectable({

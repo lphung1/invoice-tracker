@@ -20,7 +20,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NewCustomerComponent } from './customer/new-customer/new-customer.component';
 import { SalesDoughnutChartComponent } from './dashboard/sales-doughnut-chart/sales-doughnut-chart.component';
 import { HttpClientModule  } from '@angular/common/http';
-
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { HttpClientModule  } from '@angular/common/http';
     LoginPageComponent,
     NavBarComponent,
     NewCustomerComponent,
-    SalesDoughnutChartComponent,
+    SalesDoughnutChartComponent
 
   ],
   imports: [
@@ -48,7 +48,7 @@ import { HttpClientModule  } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
