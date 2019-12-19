@@ -1,23 +1,23 @@
 
-            <div class="card m-3 shadow-lg animate slideIn" >
+            <div class="card m-3 shadow-lg animate slideIn" style="width: 15em; display: flex; " >
                 <div class="card-header">
-                        {{thisCustomer.firstName}} {{thisCustomer.lastName}}
+                        {{thisCustomer.customerFirstname}} {{thisCustomer.customerLastname}}
                 </div>
                 <div class="card-body">
                     <div class="clearfix">
                         
                             <a href="#" class="white">
-                                    <img src="../assets/default.png" width="72em" height="72em" class="card-image" />
-                                    Phone: 
+
+                                    <img src= '{{imgsrc}}' width="72em" height="72em" class="card-image" /></a>
+                                    <br> Phone: 
                                     {{thisCustomer.customerPhoneNumber}}
-                            </a>
+                            
                         
                             <div class="card-body-content">
                                <br> {{thisCustomer.customerAddress}} <br>
                                 {{thisCustomer.customerEmail}}
                             </div>
-                            <a [routerLink] = "['/list-invoices']" >View Orders</a>
-                        
+                            <a [routerLink] = "['/list-invoices']" >View Invoices</a>                      
                     </div>
                 </div>
             </div>

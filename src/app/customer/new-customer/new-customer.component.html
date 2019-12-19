@@ -7,17 +7,19 @@
     <div class="form-row">
         <div class="col">
             <label for="formGroupExampleInput">First Name:</label>
-            <input type="text" class="form-control" [(ngModel)]="customer.firstName" name="firstName"
+            <input type="text" class="form-control" [(ngModel)]="customer.customerFirstname" name="firstName"
                 placeholder="First Name">
         </div>
         <div class="col">
             <label for="formGroupExampleInput2">Last Name:</label>
-            <input type="text" class="form-control" [(ngModel)]="customer.lastName" name="lastName"
+            <input type="text" class="form-control" [(ngModel)]="customer.customerLastname" name="lastName"
                 placeholder="Last Name">
         </div>
     </div>
     <label for="formGroupExampleInput2">Email:</label>
-    <input type="text" class="form-control" [(ngModel)]="customer.customerEmail" name="email" placeholder="Addrress">
+    <input type="text" class="form-control" [(ngModel)]="customer.customerEmail" name="email" placeholder="Email">
+    <label for="formGroupExampleInput2">Address:</label>
+    <input type="text" class="form-control" [(ngModel)]="customer.customerAddress" name="address" placeholder="Address">
 
     <div class="form-row">
         <div class="col">

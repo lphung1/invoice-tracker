@@ -1,5 +1,7 @@
+import { CustomerService } from './../../customer.service';
 import { Customer } from 'src/app/Models/Customer';
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-new-customer',
@@ -9,12 +11,18 @@ import { Component, OnInit } from '@angular/core';
 export class NewCustomerComponent implements OnInit {
 
   customer: Customer = new Customer();
-  constructor() { }
+  constructor(private service: CustomerService) { }
 
   ngOnInit() {
   }
   OnSubmit() {
-    console.log(this.customer);
+    this.service.Save(this.customer).subscribe(resp => {
+      console.log(resp );
+      if( resp != null) {
+        window.alert('Customer Added!');
+        this.customer = new Customer();
+      }
+    });
   }
 
 }
