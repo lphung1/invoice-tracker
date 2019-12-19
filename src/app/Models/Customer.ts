@@ -1,3 +1,4 @@
+import { User } from './User';
 export class Customer {
 
     customerId: number;
@@ -9,8 +10,9 @@ export class Customer {
     customerState: string;
     customerPhoneNumber: string;
     customerPicture: string;
-
+    user: User;
     constructor() {
+        this.user = new User();
     }
 
 }

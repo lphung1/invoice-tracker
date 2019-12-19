@@ -16,8 +16,10 @@ export class NewInvoiceComponent implements OnInit {
 
   invoice: Invoice = new Invoice();
   invoiceLineArray: InvoiceLine[] = [];
+
   customerList: Customer [] ; // Enter the list for customers here and replace this array later
   selectedCustomer: Customer;
+
 
   newAttribute: any = {};
   constructor(private invoService: InvoiceService, private userServ: UserService) { }

@@ -27,6 +27,10 @@ export class LoginPageComponent implements OnInit {
     } else {
 
       console.log("login info " + this.thisUser.username + " " + this.thisUser.password);
+      //console.log("login info " + this.thisUser.username  + " " + this.thisUser.password);
+      //console.log(this.userService.postUser(this.thisUser).subscribe(foos => console.log(foos)));
+
+      this.router.navigate(['dashboard-home']);
 
       this.userService.postUser(this.thisUser).subscribe(obj => {
         console.log('Login returned: ' + obj);
